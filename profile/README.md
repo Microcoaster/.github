@@ -87,4 +87,4 @@ Application web de contrôle pour modules ESP32 gérant les différents composan
 
 ---
 
-**MicroCoaster** - Créer, étendre, personnaliser 🎢
+**MicroCoaster** - Des heures infini de fun 🎢
