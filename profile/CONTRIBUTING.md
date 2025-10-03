@@ -4,94 +4,31 @@ Guide complet pour contribuer aux projets MicroCoaster sur GitHub.
 
 ---
 
+## Introduction
+
+### Prérequis
+- Connaissance de base de Git.
+- Éditeur de code comme VS Code.
+- Compte GitHub.
+
+---
+
 ## 📑 Sommaire
 
-1. [Premiers pas](#premiers-pas)
-2. [Utilisation de Git](#utilisation-de-git)
-3. [Gestion des issues](#gestion-des-issues)
-4. [Création de branches](#création-de-branches)
-5. [Conventions de commits](#conventions-de-commits)
-6. [Pull Requests](#pull-requests)
-7. [Résolution de conflits](#résolution-de-conflits)
-8. [FAQ](#faq)
-
----
-
-## Premiers pas
-
-### Installation de Git
-
-```bash
-# Vérifier l'installation
-git --version
-
-# Configuration initiale
-git config --global user.name "Ton Nom"
-git config --global user.email "ton@email.com"
-```
-
-### Cloner un repository
-
-```bash
-git clone https://github.com/Microcoaster/MicroCoasterWebApp.git
-cd MicroCoasterWebApp
-```
-
----
-
-## Utilisation de Git
-
-### Commandes de base
-
-```bash
-# Voir l'état des fichiers
-git status
-
-# Voir l'historique
-git log --oneline
-
-# Voir les branches locales
-git branch
-
-# Voir les branches distantes
-git branch -r
-
-# Voir toutes les branches (locales + distantes)
-git branch -a
-
-# Mettre à jour les refs distantes
-git fetch --all --prune
-
-# Afficher plus d'infos sur les branches (commits, upstream)
-git branch -vv
-
-# Changer de branche
-git switch nom-branche  # Syntaxe recommandée (Git 2.23+)
-
-# Créer et suivre une branche distante
-git switch --track origin/develop
-
-# Mettre à jour depuis le dépôt distant
-git pull origin develop
-```
-
-### Sauvegarder son travail
-
-```bash
-# Ajouter des fichiers modifiés
-git add fichier.js
-git add -A  # Ajouter tous les fichiers
-
-# Créer un commit
-git commit -m "type: description"
-
-# Envoyer vers GitHub
-git push origin nom-branche
-```
+1. [Gestion des issues](#gestion-des-issues)
+2. [Création de branches et codage](#création-de-branches-et-codage)
+3. [Pull Requests](#pull-requests)
+4. [Revue de code](#revue-de-code)
+5. [Gestion du CHANGELOG](#gestion-du-changelog)
+6. [Résolution de conflits](#résolution-de-conflits)
 
 ---
 
 ## Gestion des issues
+
+Commençons par les issues. Les issues permettent de signaler des bugs, de proposer des améliorations ou de nouvelles fonctionnalités. C'est ici que nous décidons quoi coder et réaliser dans les différents projets. Vous pouvez également consulter les tâches à faire sur [https://github.com/orgs/Microcoaster/projects/1](https://github.com/orgs/Microcoaster/projects/1), qui regroupe toutes les tâches de tous les dépôts.
+
+Vous pouvez créer une nouvelle issue. Voici les règles à respecter et le template.
 
 ### Quand créer une issue ?
 
@@ -104,97 +41,80 @@ Créez **immédiatement** une issue pour :
 
 ### Comment créer une bonne issue ?
 
-**Pour un bug :**
+Utilisez le template suivant pour structurer votre issue de manière claire et complète. Remplissez chaque section avec des détails factuels. Ajoutez des labels (ex. `bug`, `enhancement`) et un type (ex. "Bug" ou "Feature Request") via l'interface GitHub. Ajoutez ensuite l'issue au projet pour suivre les ajouts en cours.
+
+**Template :**
+
 ```markdown
-**Description**
-Le portail ne s'ouvre pas après le départ du train.
+## Titre clair et descriptif
+(ex. : "Bug : Portail ne s'ouvre pas après départ du train")
 
-**Étapes pour reproduire**
-1. Lancer l'application
-2. Envoyer un train
-3. Observer le portail
+## Description
+Décrivez le problème ou la proposition en détail. Soyez précis sur ce qui se passe et pourquoi c'est important.
 
-**Comportement attendu**
-Le portail devrait s'ouvrir automatiquement.
+## Type de changement
+- [ ] Bug
+- [ ] Nouvelle fonctionnalité
+- [ ] Amélioration
+- [ ] Documentation
+- [ ] Question
 
-**Environnement**
-- Version : v1.2.3
-- Navigateur : Chrome 120
-- Module : Station ESP32
+## Étapes pour reproduire (pour les bugs)
+1. Étape 1
+2. Étape 2
+3. ...
+
+## Comportement attendu
+Expliquez ce qui devrait se passer.
+
+## Environnement
+- Version du projet :
+- Navigateur/Système :
+- Modules concernés (ex. ESP32) :
+
+## Solution proposée (optionnel)
+Idées pour résoudre le problème.
+
+## Screenshots ou logs (optionnel)
+Ajoutez des captures d'écran ou extraits de logs si pertinent.
 ```
 
-**Pour une fonctionnalité :**
-```markdown
-**Fonctionnalité souhaitée**
-Ajouter un mode nuit pour l'interface web.
-
-**Justification**
-Amélioration du confort visuel lors des sessions nocturnes.
-
-**Solution proposée**
-Toggle dans les paramètres utilisateur avec sauvegarde locale.
-```
-
-### Labels à utiliser
-
-- `bug` : Problème à corriger
-- `enhancement` : Amélioration ou nouvelle fonctionnalité
-- `documentation` : Documentation manquante ou à améliorer
-- `question` : Question technique
-- `priority-high` : Priorité élevée
+[Placeholder pour vidéo : Comment créer une issue à partir de la page de l'organisation, juste l'upload de l'issue]
 
 ---
 
-## Création de branches
+## Création de branches et codage
+
+Comment réaliser ce qui est demandé dans une issue ? Nous allons voir comment coder en utilisant les branches.
+
+Repérez une issue à traiter, puis mettez-vous au travail. Pour cela, allez sur l'issue et créez une nouvelle branche. Voici les conventions à respecter pour le nom des branches.
 
 ### Nommage des branches
 
 **Format** : `type/description-courte`
 
-**Exemples valides :**
-```bash
-feature/timeline-editor
-feature/rgb-light-control
-bugfix/station-portal-sync
-bugfix/websocket-reconnection
-hotfix/critical-memory-leak
-docs/changelog
-```
+#### Types de branches
 
-**Exemples invalides :**
-```bash
-❌ nouvelle-feature
-❌ fix
-❌ test_branch
-❌ Tom-travail
-```
+| Type | Utilisation | Exemple (nom de branche) |
+|------|-------------|-------------------------|
+| `feat` | Nouvelle fonctionnalité | `feat/ajout-controles-timeline` |
+| `fix` | Correction de bug | `fix/resoudre-validation-connexion` |
+| `docs` | Documentation | `docs/mettre-a-jour-docs-api` |
+| `style` | Formatage / mise en forme | `style/formater-fichiers-css` |
+| `refactor` | Refactorisation | `refactor/simplifier-websocket` |
+| `test` | Ajout de tests | `test/ajouter-tests-modele-utilisateur` |
+| `chore` | Tâches de maintenance | `chore/mettre-a-jour-dependances` |
+| `perf` | Amélioration des performances | `perf/optimiser-requetes-db` |
 
-### Créer et publier une branche
+Une fois le nom choisi, deux options s'offrent à vous : soit vous utilisez [GitHub Desktop](https://desktop.github.com/download/) et les commandes se font automatiquement dans VS Code, soit vous n'avez pas cet outil et vous devrez exécuter les commandes manuellement.
 
-```bash
-# Depuis develop
-git switch develop
-git pull origin develop
+[Placeholder pour vidéo : Où on me voit choisir une issue et mettre le nom et ouvrir avec GitHub Desktop]
 
-# Créer la nouvelle branche
-git switch -c feature/ma-fonctionnalite
+Maintenant, vous pouvez modifier le code dans votre branche et effectuer des commits en respectant les conventions de commits détaillées ci-dessous.
 
-# Publier sur GitHub
-git push -u origin feature/ma-fonctionnalite
-```
+### Conventions de commits
 
-### Suivre une branche distante existante
-
-```bash
-git fetch --all --prune
-git switch --track origin/docs/changelog  # Crée une branche locale qui suit origin/docs/changelog
-```
-
----
-
-## Conventions de commits
-
-### Format
+#### Format
 
 ```
 type: description courte
@@ -204,7 +124,7 @@ type: description courte
 [footer optionnel]
 ```
 
-### Types de commits
+#### Types de commits
 
 | Type | Utilisation | Exemple |
 |------|-------------|---------|
@@ -217,93 +137,80 @@ type: description courte
 | `chore` | Tâches maintenance | `chore: mise à jour dépendances` |
 | `perf` | Amélioration performance | `perf: optimisation requêtes base de données` |
 
-### Exemples détaillés
-
-**Commit simple :**
-```bash
-git commit -m "feat: ajout bouton pause timeline"
-```
-
-**Commit avec description :**
-```bash
-git commit -m "fix: correction déconnexion ESP32
-
-Le WebSocket natif se déconnectait après 5 minutes d'inactivité.
-Ajout d'un système de ping/pong toutes les 30 secondes.
-
-Fixes #42"
-```
-
-**Commit breaking change :**
-```bash
-git commit -m "feat!: nouvelle API WebSocket
-
-BREAKING CHANGE: Le format des messages WebSocket a changé.
-Les anciens modules ESP32 doivent être mis à jour."
-```
-
-**Exemple pour CHANGELOG :**
-```bash
-git add CHANGELOG.md
-git commit -m "docs: ajout du CHANGELOG.md initial pour v0.0.0"
-```
-
-### Messages à éviter
-
-```bash
-❌ git commit -m "fix"
-❌ git commit -m "update"
-❌ git commit -m "modifications"
-❌ git commit -m "WIP"
-❌ git commit -m "ça marche"
-```
-
 ---
 
 ## Pull Requests
 
-### Créer une Pull Request
+Une fois le codage terminé et les commits effectués sur votre branche, poussez-la et créez une pull request pour proposer vos modifications.
+
+[Placeholder pour vidéo : Où on me voit pousser la branche puis ouvrir la pull request sur GitHub]
+
+### Étapes pour créer une Pull Request
 
 1. **Pousser votre branche**
 ```bash
-git push origin docs/changelog  # Exemple pour branche docs/changelog
+git push origin feat/ajout-controles-timeline  # Remplacez par le nom de votre branche
 ```
 
 2. **Sur GitHub :**
-   - Aller sur https://github.com/Microcoaster/MicroCoasterWebApp
-   - Cliquer "Compare & pull request"
-   - Sélectionner `develop` ou `main` comme branche de destination (note : `main` est protégée, nécessite PR)
+   - Allez sur le dépôt où vous travaillez (ex. https://github.com/Microcoaster/MicroCoasterWebApp).
+   - Cliquez sur "Compare & pull request".
+   - Sélectionnez `develop` comme branche de destination (les branches `develop` et `main` sont protégées contre les push directs).
 
 3. **Remplir le template :**
 
 ```markdown
 ## Description
-Ajout d'un fichier CHANGELOG.md initial pour v0.0.0.
+Décrivez les changements en détail (ex. : Ajout de contrôles pour la timeline avec boutons pause et lecture).
 
 ## Type de changement
-- [x] Nouvelle fonctionnalité
-- [ ] Correction de bug
-- [ ] Documentation
+Choisissez un type principal :
+- [ ] feat (Nouvelle fonctionnalité)
+- [ ] fix (Correction de bug)
+- [ ] docs (Documentation)
+- [ ] refactor (Refactorisation)
+- [ ] test (Tests)
+- [ ] chore (Maintenance)
+- [ ] perf (Performance)
+- [ ] style (Style)
 
 ## Checklist
-- [x] Code testé localement
-- [x] Documentation mise à jour
-- [x] Pas de conflit avec develop
-- [x] Commits respectent les conventions
+- [ ] Code testé localement
+- [ ] Documentation mise à jour si nécessaire
+- [ ] CHANGELOG mis à jour (ajoutez une entrée pour cette PR)
+- [ ] Pull depuis develop effectué avant la PR
 
 ## Issue liée
-Closes #123
+Closes #123 (ou liste des issues liées)
 
 ## Screenshots
-[capture d'écran si pertinent]
+[Ajoutez des captures d'écran si pertinent]
 ```
+
+### Processus de revue
+
+Après la création de la pull request, une personne va reviewer le code (une review obligatoire pour le merge). En cas de demande de modifications, ajustez le code, commitez à nouveau et demandez une nouvelle review. Une fois la pull request acceptée, elle est fusionnée sur `develop` et votre branche est supprimée.
+
+[Placeholder pour vidéo : Où on voit la demande de modification sur la PR, transition on me voit changer le code et re-pousser, puis re-transition où le pull request est validé]
 
 ### Branches protégées
 
-- `main` est protégée : pas de push direct. Créez une PR depuis une branche feature/docs vers `main` ou `develop`.
-- Après merge dans `develop`, créez une PR de `develop` vers `main` pour release (ex. v0.0.0).
+- `main` et `develop` sont protégées : pas de push direct. Créez toujours une PR vers `develop` pour les changements standards.
+- Pour une nouvelle version (release), créez une PR de `develop` vers `main`.
 
-### Revue de code
+### Créer une release de develop vers main
+
+1. Assurez-vous que `develop` est à jour et testé.
+2. Créez une PR depuis `develop` vers `main` sur GitHub.
+3. Dans la PR, décrivez les changements majeurs.
+4. Mergez après revue.
+5. Taggez la release (voir FAQ).
+
+[Placeholder pour vidéo : Où on me voit créer une PR de develop vers main, la merger après revue, puis tagger la release]
+
+---
+
+## Revue de code
 
 **En tant que reviewer :**
 - Tester le code localement
@@ -315,6 +222,31 @@ Closes #123
 - Répondre aux commentaires
 - Effectuer les modifications demandées
 - Notifier quand c'est prêt pour re-review
+
+---
+
+## Gestion du CHANGELOG
+
+Pour chaque pull request, ajoutez les détails des modifications apportées dans la section ## [Unreleased], juste avant la dernière version. Par exemple, consultez [keepachangelog.com](https://keepachangelog.com/fr) pour le format recommandé.
+
+Exemple de format :
+
+## [Unreleased]
+
+### Added
+- Nouvelle fonctionnalité de timeline
+
+### Fixed
+- Correction du bug de synchronisation
+
+### Changed
+- Amélioration des performances de la base de données
+
+---
+
+## Conclusion
+
+Merci de suivre ce guide pour que nous codions bien ensemble ! Si vous avez des doutes, n'hésitez pas à demander dans une issue ou directement à yamakajump.
 
 ---
 
@@ -421,7 +353,7 @@ git pull origin develop
 git stash pop
 ```
 
-### Comment voir les différences avant de commiter ?
+### Comment voir les différences avant de committer ?
 
 ```bash
 # Voir les modifications non stagées
