@@ -33,8 +33,8 @@ git config --global user.email "ton@email.com"
 ### Cloner un repository
 
 ```bash
-git clone https://github.com/MicroCoaster/nom-du-repo.git
-cd nom-du-repo
+git clone https://github.com/Microcoaster/MicroCoasterWebApp.git
+cd MicroCoasterWebApp
 ```
 
 ---
@@ -50,11 +50,26 @@ git status
 # Voir l'historique
 git log --oneline
 
-# Voir les branches
+# Voir les branches locales
+git branch
+
+# Voir les branches distantes
+git branch -r
+
+# Voir toutes les branches (locales + distantes)
 git branch -a
 
+# Mettre à jour les refs distantes
+git fetch --all --prune
+
+# Afficher plus d'infos sur les branches (commits, upstream)
+git branch -vv
+
 # Changer de branche
-git checkout nom-branche
+git switch nom-branche  # Syntaxe recommandée (Git 2.23+)
+
+# Créer et suivre une branche distante
+git switch --track origin/develop
 
 # Mettre à jour depuis le dépôt distant
 git pull origin develop
@@ -65,7 +80,7 @@ git pull origin develop
 ```bash
 # Ajouter des fichiers modifiés
 git add fichier.js
-git add .  # Ajouter tous les fichiers
+git add -A  # Ajouter tous les fichiers
 
 # Créer un commit
 git commit -m "type: description"
@@ -143,7 +158,7 @@ feature/rgb-light-control
 bugfix/station-portal-sync
 bugfix/websocket-reconnection
 hotfix/critical-memory-leak
-docs/contributing-guide
+docs/changelog
 ```
 
 **Exemples invalides :**
@@ -158,14 +173,21 @@ docs/contributing-guide
 
 ```bash
 # Depuis develop
-git checkout develop
+git switch develop
 git pull origin develop
 
 # Créer la nouvelle branche
-git checkout -b feature/ma-fonctionnalite
+git switch -c feature/ma-fonctionnalite
 
 # Publier sur GitHub
 git push -u origin feature/ma-fonctionnalite
+```
+
+### Suivre une branche distante existante
+
+```bash
+git fetch --all --prune
+git switch --track origin/docs/changelog  # Crée une branche locale qui suit origin/docs/changelog
 ```
 
 ---
@@ -220,6 +242,12 @@ BREAKING CHANGE: Le format des messages WebSocket a changé.
 Les anciens modules ESP32 doivent être mis à jour."
 ```
 
+**Exemple pour CHANGELOG :**
+```bash
+git add CHANGELOG.md
+git commit -m "docs: ajout du CHANGELOG.md initial pour v0.0.0"
+```
+
 ### Messages à éviter
 
 ```bash
@@ -238,19 +266,19 @@ Les anciens modules ESP32 doivent être mis à jour."
 
 1. **Pousser votre branche**
 ```bash
-git push origin feature/ma-fonctionnalite
+git push origin docs/changelog  # Exemple pour branche docs/changelog
 ```
 
 2. **Sur GitHub :**
-   - Aller sur le repository
+   - Aller sur https://github.com/Microcoaster/MicroCoasterWebApp
    - Cliquer "Compare & pull request"
-   - Sélectionner `develop` comme branche de destination
+   - Sélectionner `develop` ou `main` comme branche de destination (note : `main` est protégée, nécessite PR)
 
 3. **Remplir le template :**
 
 ```markdown
 ## Description
-Ajout d'un éditeur de timeline permettant de créer des séquences automatisées.
+Ajout d'un fichier CHANGELOG.md initial pour v0.0.0.
 
 ## Type de changement
 - [x] Nouvelle fonctionnalité
@@ -269,6 +297,11 @@ Closes #123
 ## Screenshots
 [capture d'écran si pertinent]
 ```
+
+### Branches protégées
+
+- `main` est protégée : pas de push direct. Créez une PR depuis une branche feature/docs vers `main` ou `develop`.
+- Après merge dans `develop`, créez une PR de `develop` vers `main` pour release (ex. v0.0.0).
 
 ### Revue de code
 
@@ -291,7 +324,7 @@ Closes #123
 
 ```bash
 # Se placer sur sa branche
-git checkout feature/ma-fonctionnalite
+git switch feature/ma-fonctionnalite
 
 # Récupérer develop
 git fetch origin
@@ -358,7 +391,7 @@ git log  # Noter le hash du commit
 git reset --hard HEAD~1
 
 # Aller sur la bonne branche
-git checkout bonne-branche
+git switch bonne-branche
 
 # Appliquer le commit
 git cherry-pick HASH_DU_COMMIT
@@ -381,7 +414,7 @@ git push origin --delete feature/ma-branche
 git stash
 
 # Revenir à l'état de develop
-git checkout develop
+git switch develop
 git pull origin develop
 
 # Récupérer votre travail si besoin
@@ -398,4 +431,9 @@ git diff
 git diff --staged
 ```
 
----
+### Comment tagger une release (ex. v0.0.0) ?
+
+```bash
+git tag v0.0.0
+git push origin v0.0.0
+```
