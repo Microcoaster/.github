@@ -1,0 +1,43 @@
+name: Project Addition
+description: Add a new project to the list.
+title: "[Project] "
+labels: ["project-addition"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Project Addition
+        Suggest adding a new project or item.
+  - type: input
+    id: project-name
+    attributes:
+      label: Project Name
+      description: Name of the project to add.
+      placeholder: "e.g., My New App"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Detailed description of the project.
+      placeholder: "What does it do? Why add it?"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Project URL
+      description: Link to the project (if applicable).
+      placeholder: "https://example.com"
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I have checked if this project already exists
+          required: true
+        - label: I have read the Contributing Guidelines
+          required: true
+        - label: I agree to follow this project's Code of Conduct
+          required: true

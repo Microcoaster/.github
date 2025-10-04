@@ -1,0 +1,43 @@
+name: Refactor Code
+description: Use this for code refactoring tasks.
+title: "[Refactor] "
+labels: ["refactor"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Code Refactor
+        Suggest or describe a code refactoring task.
+  - type: textarea
+    id: current-code
+    attributes:
+      label: Current Code
+      description: Describe the code that needs refactoring.
+      placeholder: "File paths, snippets..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-refactor
+    attributes:
+      label: Proposed Refactor
+      description: How should it be refactored? Benefits?
+      placeholder: "Improvements in readability, performance..."
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Potential Impact
+      description: Any risks or dependencies?
+      placeholder: "Breaking changes? Tests needed?"
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I have checked the existing issues
+          required: true
+        - label: I have read the Contributing Guidelines
+          required: true
+        - label: I agree to follow this project's Code of Conduct
+          required: true

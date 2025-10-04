@@ -1,0 +1,43 @@
+name: Style Changing Request
+description: Suggest a style design.
+title: "[Style] "
+labels: ["design", "ui/ux"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Style Change Request
+        Propose changes to the visual style or design.
+  - type: textarea
+    id: current-style
+    attributes:
+      label: Current Style
+      description: Describe the existing style that needs changing.
+      placeholder: "Screenshots or descriptions..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-style
+    attributes:
+      label: Proposed Style
+      description: What changes do you suggest?
+      placeholder: "Colors, layouts, mocks..."
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why this change? Benefits?
+      placeholder: "Accessibility, consistency..."
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I have checked the existing issues
+          required: true
+        - label: I have read the Contributing Guidelines
+          required: true
+        - label: I agree to follow this project's Code of Conduct
+          required: true
