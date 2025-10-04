@@ -1,33 +1,21 @@
-name: 🐛 Rapport de bogue
-description: Signaler un bogue. Si ce n'est pas un bogue, choisissez un autre type d'issue.
-title: "[Bogue] "
-labels: ["bogue"]
+name: 🐛 Rapport de bug
+description: Signaler un bug. Si ce n'est pas un bug, choisissez un autre type d'issue.
+title: "[Bug] "
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Rapport de bogue
+        ## Rapport de bug
         Veuillez fournir autant de détails que possible pour nous aider à reproduire et corriger le problème.
   - type: textarea
     id: what-happened
     attributes:
       label: Que s'est-il passé ?
-      description: Une description claire et concise du bogue.
-      placeholder: "Décrivez le bogue ici..."
+      description: Une description claire et concise du bug, incluant les étapes pour reproduire et des captures d'écran si applicable.
+      placeholder: "Décrivez le bug ici, ajoutez des détails et captures d'écran..."
     validations:
       required: true
-  - type: textarea
-    id: additional-description
-    attributes:
-      label: Description supplémentaire
-      description: Tout contexte supplémentaire ou étapes pour reproduire.
-      placeholder: "Ajoutez plus de détails..."
-  - type: textarea
-    id: screenshots
-    attributes:
-      label: Ajouter des captures d'écran
-      description: Si applicable, ajoutez des captures d'écran pour aider à expliquer votre problème.
-      placeholder: "Glissez-déposez des images ici ou collez des liens."
   - type: dropdown
     id: browsers
     attributes:
