@@ -1,37 +1,37 @@
-name: Bug Report
-description: File a bug report. If this isn't a bug, choose a different issue type.
-title: "[Bug] "
-labels: ["bug"]
+name: 🐛 Rapport de bogue
+description: Signaler un bogue. Si ce n'est pas un bogue, choisissez un autre type d'issue.
+title: "[Bogue] "
+labels: ["bogue"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Bug Report
-        Please provide as much detail as possible to help us reproduce and fix the issue.
+        ## Rapport de bogue
+        Veuillez fournir autant de détails que possible pour nous aider à reproduire et corriger le problème.
   - type: textarea
     id: what-happened
     attributes:
-      label: What happened?
-      description: A clear and concise description of what the bug is.
-      placeholder: "Describe the bug here..."
+      label: Que s'est-il passé ?
+      description: Une description claire et concise du bogue.
+      placeholder: "Décrivez le bogue ici..."
     validations:
       required: true
   - type: textarea
     id: additional-description
     attributes:
-      label: Additional description
-      description: Any extra context or steps to reproduce.
-      placeholder: "Add more details..."
+      label: Description supplémentaire
+      description: Tout contexte supplémentaire ou étapes pour reproduire.
+      placeholder: "Ajoutez plus de détails..."
   - type: textarea
     id: screenshots
     attributes:
-      label: Add screenshots
-      description: If applicable, add screenshots to help explain your problem.
-      placeholder: "Drag and drop images here or paste links."
+      label: Ajouter des captures d'écran
+      description: Si applicable, ajoutez des captures d'écran pour aider à expliquer votre problème.
+      placeholder: "Glissez-déposez des images ici ou collez des liens."
   - type: dropdown
     id: browsers
     attributes:
-      label: What browsers are you seeing the problem on?
+      label: Sur quels navigateurs voyez-vous le problème ?
       multiple: true
       options:
         - Firefox
@@ -39,19 +39,19 @@ body:
         - Safari
         - Brave
         - Microsoft Edge
-        - Other
+        - Autre
     validations:
       required: false
   - type: checkboxes
     id: terms
     attributes:
-      label: Checklist
+      label: Liste de contrôle
       options:
-        - label: I have checked the existing issues
+        - label: J'ai vérifié les issues existantes
           required: true
-        - label: I have read the Contributing Guidelines
+        - label: J'ai lu les directives de contribution
           required: true
-        - label: I agree to follow this project's Code of Conduct
+        - label: J'accepte de suivre le code de conduite du projet
           required: true
-        - label: I want to work on this issue
+        - label: Je veux travailler sur cette issue
           required: false

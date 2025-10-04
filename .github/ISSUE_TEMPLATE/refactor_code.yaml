@@ -1,43 +1,43 @@
-name: Refactor Code
-description: Use this for code refactoring tasks.
+name: 🔄 Refactorisation du code
+description: Utilisez ceci pour les tâches de refactorisation du code.
 title: "[Refactor] "
 labels: ["refactor"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Code Refactor
-        Suggest or describe a code refactoring task.
+        ## Refactorisation du code
+        Suggérer ou décrire une tâche de refactorisation du code.
   - type: textarea
     id: current-code
     attributes:
-      label: Current Code
-      description: Describe the code that needs refactoring.
-      placeholder: "File paths, snippets..."
+      label: Code actuel
+      description: Décrivez le code qui nécessite une refactorisation.
+      placeholder: "Chemins de fichiers, extraits..."
     validations:
       required: true
   - type: textarea
     id: proposed-refactor
     attributes:
-      label: Proposed Refactor
-      description: How should it be refactored? Benefits?
-      placeholder: "Improvements in readability, performance..."
+      label: Refactorisation proposée
+      description: Comment devrait-il être refactorisé ? Avantages ?
+      placeholder: "Améliorations en lisibilité, performance..."
     validations:
       required: true
   - type: textarea
     id: impact
     attributes:
-      label: Potential Impact
-      description: Any risks or dependencies?
-      placeholder: "Breaking changes? Tests needed?"
+      label: Impact potentiel
+      description: Risques ou dépendances ?
+      placeholder: "Changements cassants ? Tests nécessaires ?"
   - type: checkboxes
     id: terms
     attributes:
-      label: Checklist
+      label: Liste de contrôle
       options:
-        - label: I have checked the existing issues
+        - label: J'ai vérifié les issues existantes
           required: true
-        - label: I have read the Contributing Guidelines
+        - label: J'ai lu les directives de contribution
           required: true
-        - label: I agree to follow this project's Code of Conduct
+        - label: J'accepte de suivre le code de conduite du projet
           required: true

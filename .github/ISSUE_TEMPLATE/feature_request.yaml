@@ -1,41 +1,41 @@
-name: Feature Request
-description: Suggest a new feature.
-title: "[Feature] "
-labels: ["enhancement"]
+name: ✨ Demande de fonctionnalité
+description: Suggérer une nouvelle fonctionnalité.
+title: "[Fonctionnalité] "
+labels: ["amélioration"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Feature Request
-        Describe the feature you'd like to see.
+        ## Demande de fonctionnalité
+        Décrivez la fonctionnalité que vous aimeriez voir.
   - type: textarea
     id: problem
     attributes:
-      label: Is your feature request related to a problem?
-      description: A clear description of the problem this feature solves.
-      placeholder: "I'm always frustrated when..."
+      label: Votre demande de fonctionnalité est-elle liée à un problème ?
+      description: Une description claire du problème que cette fonctionnalité résout.
+      placeholder: "Je suis toujours frustré quand..."
   - type: textarea
     id: solution
     attributes:
-      label: Describe the solution you'd like
-      description: What do you want to happen?
-      placeholder: "A clear description..."
+      label: Décrivez la solution souhaitée
+      description: Que voulez-vous qu'il se passe ?
+      placeholder: "Une description claire..."
     validations:
       required: true
   - type: textarea
     id: alternatives
     attributes:
-      label: Describe alternatives you've considered
-      description: Any alternative solutions or features?
-      placeholder: "Other approaches..."
+      label: Décrivez les alternatives que vous avez envisagées
+      description: Des solutions ou fonctionnalités alternatives ?
+      placeholder: "Autres approches..."
   - type: checkboxes
     id: terms
     attributes:
-      label: Checklist
+      label: Liste de contrôle
       options:
-        - label: I have checked the existing issues
+        - label: J'ai vérifié les issues existantes
           required: true
-        - label: I have read the Contributing Guidelines
+        - label: J'ai lu les directives de contribution
           required: true
-        - label: I agree to follow this project's Code of Conduct
+        - label: J'accepte de suivre le code de conduite du projet
           required: true

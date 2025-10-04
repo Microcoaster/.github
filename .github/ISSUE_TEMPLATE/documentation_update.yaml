@@ -1,43 +1,43 @@
-name: Documentation Update
-description: Improve or update the project documentation.
+name: 📚 Mise à jour de la documentation
+description: Améliorer ou mettre à jour la documentation du projet.
 title: "[Docs] "
 labels: ["documentation"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Documentation Update
-        Suggest changes or additions to the docs.
+        ## Mise à jour de la documentation
+        Suggérer des changements ou ajouts à la docs.
   - type: textarea
     id: current-docs
     attributes:
-      label: Current Documentation
-      description: Describe the existing documentation that needs updating.
-      placeholder: "Link to the section or file..."
+      label: Documentation actuelle
+      description: Décrivez la documentation existante qui nécessite une mise à jour.
+      placeholder: "Lien vers la section ou le fichier..."
     validations:
       required: true
   - type: textarea
     id: proposed-changes
     attributes:
-      label: Proposed Changes
-      description: What should be added, removed, or modified?
-      placeholder: "Detailed suggestions..."
+      label: Changements proposés
+      description: Que faut-il ajouter, supprimer ou modifier ?
+      placeholder: "Suggestions détaillées..."
     validations:
       required: true
   - type: textarea
     id: additional-context
     attributes:
-      label: Additional Context
-      description: Why is this update needed? Any references?
-      placeholder: "Provide context..."
+      label: Contexte supplémentaire
+      description: Pourquoi cette mise à jour est-elle nécessaire ? Références ?
+      placeholder: "Fournir du contexte..."
   - type: checkboxes
     id: terms
     attributes:
-      label: Checklist
+      label: Liste de contrôle
       options:
-        - label: I have checked the existing issues
+        - label: J'ai vérifié les issues existantes
           required: true
-        - label: I have read the Contributing Guidelines
+        - label: J'ai lu les directives de contribution
           required: true
-        - label: I agree to follow this project's Code of Conduct
+        - label: J'accepte de suivre le code de conduite du projet
           required: true
