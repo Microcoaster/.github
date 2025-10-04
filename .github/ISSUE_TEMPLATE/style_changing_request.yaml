@@ -1,7 +1,7 @@
 name: 🎨 Demande de changement de style
 description: Suggérer un design de style.
 title: "[Style] "
-labels: ["design", "ui/ux"]
+labels: ["design"]
 body:
   - type: markdown
     attributes:

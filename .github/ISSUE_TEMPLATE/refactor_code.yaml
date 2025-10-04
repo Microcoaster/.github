@@ -1,7 +1,7 @@
 name: 🔄 Refactorisation du code
 description: Utilisez ceci pour les tâches de refactorisation du code.
 title: "[Refactor] "
-labels: ["refactor"]
+labels: ["refactorisation"]
 body:
   - type: markdown
     attributes:

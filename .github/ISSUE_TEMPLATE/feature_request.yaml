@@ -1,7 +1,7 @@
 name: ✨ Demande de fonctionnalité
 description: Suggérer une nouvelle fonctionnalité.
 title: "[Fonctionnalité] "
-labels: ["amélioration"]
+labels: ["fonctionnalité"]
 body:
   - type: markdown
     attributes:
