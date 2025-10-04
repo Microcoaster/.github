@@ -56,7 +56,7 @@ Application web de contrôle pour modules ESP32 gérant les différents composan
 ### Conventions
 - **Commits** : `type: description` (ex: `feat: ajout contrôle fumée`)
 - **Branches** : préfixe + description en kebab-case
-- **Issues** : utiliser les labels appropriés (`bug`, `enhancement`, `documentation`)
+- **Issues** : utiliser les labels appropriés (`bug`, `fonctionnalité`, `documentation`)
 - **Pull Requests** : description claire + référence à l'issue concernée
 
 ### Règles
