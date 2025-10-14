@@ -11,6 +11,7 @@ Organisation officielle de développement logiciel pour MicroCoaster - Système 
 - **Échelle** : 1:78
 - **Site web** : [microcoaster.com](https://microcoaster.com)
 - **Contact** : tom@microcoaster.com
+- **Support** : tristan@microcoaster.com
 
 ---
 
