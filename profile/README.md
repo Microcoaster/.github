@@ -82,6 +82,8 @@ Application web de contrôle pour modules ESP32 gérant les différents composan
 
 - [Site officiel](https://microcoaster.com)
 - [Application web](https://app.microcoaster.com)
+- [Forum Web](https://forum.microcoaster.com)
+- [Docs web](https://docs.microcoaster.com)
 - [YouTube](https://www.youtube.com/@microcoaster)
 - [Discord communauté](https://microcoaster.com/discord)
 - [Instagram](https://instagram.com/microcoaster)
