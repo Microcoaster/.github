@@ -16,8 +16,6 @@ Ce guide vaut pour tous les dépôts de l'organisation, firmwares comme applicat
 
 <img src="img/sections/c02.png" alt="02 Une branche par sujet" width="100%">
 
-<img src="img/blocs/01.png" alt="Terminal bash : partir de develop" width="100%">
-
 ```bash
 git switch develop
 git pull
@@ -31,8 +29,6 @@ La suite du nom décrit le sujet en kebab-case. `feature/pilotage-fumee`, pas `f
 <img src="img/sections/c03.png" alt="03 Des commits qui se relisent" width="100%">
 
 Le format est `type: description`, en français, à l'infinitif ou au présent.
-
-<img src="img/blocs/02.png" alt="Messages de commit : format attendu" width="100%">
 
 ```
 feat: ajout du contrôle de la machine à fumée
@@ -72,8 +68,6 @@ Les figures vivent dans `docs/schemas/` du dépôt concerné, les bandeaux de se
 
 Pour le premier cas, dans l'ordre :
 
-<img src="img/blocs/03.png" alt="Terminal bash : rattraper une branche en retard" width="100%">
-
 ```bash
 git switch develop && git pull
 git switch feature/ma-branche
@@ -81,8 +75,6 @@ git rebase develop
 ```
 
 Pour le second, la première commande sauve le travail sur une nouvelle branche **avant** que la seconde ne remette `develop` en place. Dans l'autre ordre, le travail est perdu.
-
-<img src="img/blocs/04.png" alt="Terminal bash : sauver un travail commité sur develop" width="100%">
 
 ```bash
 git switch -c feature/mon-sujet

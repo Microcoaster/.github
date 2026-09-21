@@ -10,8 +10,6 @@ Les READMEs de l'organisation ne contiennent aucun tableau Markdown. Ce qui sera
 
 Ils tournent sous Git Bash et n'ont besoin que d'une chose : Chrome, qui sert de moteur de rendu.
 
-<img src="img/blocs/01.png" alt="Terminal bash : indiquer le chemin de Chrome" width="100%">
-
 ```bash
 export CHROME="/c/Program Files/Google/Chrome/Application/chrome.exe"   # si le chemin diffère
 ```
@@ -22,8 +20,6 @@ export CHROME="/c/Program Files/Google/Chrome/Application/chrome.exe"   # si le 
 
 **Les bandeaux de section.**
 
-<img src="img/blocs/02.png" alt="Terminal bash : les bandeaux de section" width="100%">
-
 ```bash
 source tools/sections.sh
 rep switchtrack "#FFAE42" "Principe" "Matériel" "Protocole" "Mise en service" "Écosystème"
@@ -32,8 +28,6 @@ rep switchtrack "#FFAE42" "Principe" "Matériel" "Protocole" "Mise en service" "
 Sortie dans `sec/`. Copiez les fichiers dans `docs/sections/` du module, renommés `s01.png` et suivants.
 
 **Un brochage.** Chaque entrée s'écrit `GPIO|Nom|Rôle`, et `--` sépare la colonne de gauche de celle de droite.
-
-<img src="img/blocs/03.png" alt="Terminal bash : un brochage" width="100%">
 
 ```bash
 source tools/pinout.sh
@@ -46,8 +40,6 @@ pinout lift "#4DD4FF" "ESP32<br>LIFT HILL" \
 
 **Une séquence.**
 
-<img src="img/blocs/04.png" alt="Terminal bash : une séquence" width="100%">
-
 ```bash
 source tools/seq.sh
 seqfig st-principe "#FFAE42" \
@@ -57,8 +49,6 @@ seqfig st-principe "#FFAE42" \
 
 **Une grille.** Le troisième argument est le nombre de colonnes. Une entrée peut porter un badge : `"NOM|BADGE|description"`.
 
-<img src="img/blocs/05.png" alt="Terminal bash : une grille" width="100%">
-
 ```bash
 source tools/grid.sh
 grid lift-cfg "#4DD4FF" 2 \
@@ -67,8 +57,6 @@ grid lift-cfg "#4DD4FF" 2 \
 ```
 
 **Une arborescence.** Le premier champ est la profondeur, `1` pour un enfant direct de la racine. Un nom qui se termine par `/` est un dossier.
-
-<img src="img/blocs/06.png" alt="Terminal bash : une arborescence" width="100%">
 
 ```bash
 source tools/tree.sh
