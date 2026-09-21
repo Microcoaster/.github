@@ -1,0 +1,7 @@
+# Sorties des générateurs. Les images finales sont versionnées dans le
+# dépôt du module qu'elles documentent, pas ici.
+html/
+sec/
+grid/
+flow/
+pin/
