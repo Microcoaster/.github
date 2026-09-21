@@ -50,13 +50,7 @@ Deux manières de donner au train l'énergie dont il vivra le circuit : le hisse
 
 <img src="img/schemas/cycle.png" alt="Une issue, puis une branche, des commits, une review, la fusion" width="100%">
 
-| Branche | Rôle |
-|:--|:--|
-| `main` | Code de production stable |
-| `develop` | Intégration des développements |
-| `feature/*` | Nouvelles fonctionnalités |
-| `bugfix/*` | Corrections |
-| `hotfix/*` | Correctifs urgents |
+<img src="img/schemas/branches.png" alt="Graphe des branches. main porte le code de production stable. develop intègre les développements. feature et bugfix partent de develop et y reviennent, pour les nouvelles fonctionnalités et les corrections. hotfix part de main et y revient, pour un correctif urgent greffé sur la production. Aucune de ces lignes n'arrive sur main ni sur develop sans passer par une review." width="100%">
 
 Un bug repéré ou une idée qui passe : ouvrez une issue tout de suite. C'est ce qui évite de l'oublier, ce qui permet d'en discuter, et ce qui garde une trace de la décision.
 
