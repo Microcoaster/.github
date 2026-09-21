@@ -1,23 +1,33 @@
+<div align="center">
+
+<img src="../profile/img/banniere.png" alt="MicroCoaster" width="100%">
+
+</div>
+
 # Générateurs de figures
 
-Les READMEs de l'organisation ne contiennent aucun tableau Markdown. Ce qui serait un tableau est dessiné, et ces quatre scripts produisent les images. Ils tournent sous Git Bash et n'ont besoin que d'une chose : Chrome, qui sert de moteur de rendu.
+Les READMEs de l'organisation ne contiennent aucun tableau Markdown. Ce qui serait un tableau est dessiné, et ces cinq scripts produisent les images.
+
+Ils tournent sous Git Bash et n'ont besoin que d'une chose : Chrome, qui sert de moteur de rendu.
 
 ```bash
-CHROME="/c/Program Files/Google/Chrome/Application/chrome.exe"   # si le chemin diffère
+export CHROME="/c/Program Files/Google/Chrome/Application/chrome.exe"   # si le chemin diffère
 ```
 
-## Ce que produit chaque script
+<img src="img/s01.png" alt="01 Les quatre scripts" width="100%">
 
-**`sections.sh`** dessine les bandeaux de section numérotés, ceux qui remplacent les titres `##`.
+<img src="img/scripts.png" alt="sections.sh produit les bandeaux de section numérotés, ceux qui remplacent les titres de niveau deux, un fichier par bandeau à copier dans docs/sections. pinout.sh produit un brochage, la carte au centre et les broches de part et d'autre, les sorties à gauche et les entrées à droite. seq.sh produit une séquence, des étapes reliées par une flèche quand il y a un ordre entre elles, quatre cartes au maximum. grid.sh produit une grille de fiches quand il n'y a pas d'ordre : commandes, réglages, variables d'environnement, tables. tree.sh produit une arborescence, dont les traits de liaison sont calculés. Tous tournent sous Git Bash et n'ont besoin que de Chrome." width="100%">
+
+**Les bandeaux de section.**
 
 ```bash
 source tools/sections.sh
 rep switchtrack "#FFAE42" "Principe" "Matériel" "Protocole" "Mise en service" "Écosystème"
 ```
 
-Sortie dans `sec/`, un fichier par bandeau. Copiez-les dans `docs/sections/` du module, renommés `s01.png` et suivants.
+Sortie dans `sec/`. Copiez les fichiers dans `docs/sections/` du module, renommés `s01.png` et suivants.
 
-**`pinout.sh`** dessine un brochage : la carte au centre, les broches de part et d'autre. Par convention les sorties sont à gauche et les entrées à droite.
+**Un brochage.** Chaque entrée s'écrit `GPIO|Nom|Rôle`, et `--` sépare la colonne de gauche de celle de droite.
 
 ```bash
 source tools/pinout.sh
@@ -28,9 +38,7 @@ pinout lift "#4DD4FF" "ESP32<br>LIFT HILL" \
   "34|Capteur Hall|Une impulsion par tour"
 ```
 
-Chaque entrée s'écrit `GPIO|Nom|Rôle`, et `--` sépare la colonne de gauche de celle de droite.
-
-**`seq.sh`** dessine une séquence : des étapes reliées par une flèche, quand il y a un ordre entre elles. Quatre cartes au maximum, au-delà c'est illisible.
+**Une séquence.**
 
 ```bash
 source tools/seq.sh
@@ -39,7 +47,7 @@ seqfig st-principe "#FFAE42" \
   "Vérin actionné|Le sens est imposé au DRV8871."
 ```
 
-**`grid.sh`** dessine une grille de fiches, quand il n'y a pas d'ordre : commandes, réglages, variables d'environnement, tables.
+**Une grille.** Le troisième argument est le nombre de colonnes. Une entrée peut porter un badge : `"NOM|BADGE|description"`.
 
 ```bash
 source tools/grid.sh
@@ -48,24 +56,45 @@ grid lift-cfg "#4DD4FF" 2 \
   "LIFT_TIMEOUT_MS|Durée maximale d'une montée avant défaut."
 ```
 
-Le troisième argument est le nombre de colonnes. Une entrée peut porter un badge : `"NOM|BADGE|description"`.
+**Une arborescence.** Le premier champ est la profondeur, `1` pour un enfant direct de la racine. Un nom qui se termine par `/` est un dossier.
 
-## Comment choisir
+```bash
+source tools/tree.sh
+treefig bot "#5865F2" "Microcoaster-bot/" \
+  "1|dao/|L'accès à la base, une classe par domaine." \
+  "2|warrantyDAO.js|Codes, activations et échéances."
+```
 
-Ce qui a un ordre devient une séquence. Ce qui n'en a pas devient une grille. Un brochage devient un schéma de carte. Une machine à états devient un graphe, écrit à la main, en reprenant les styles de `seq.sh`.
+<img src="img/s02.png" alt="02 Comment choisir" width="100%">
 
-## Deux règles à ne pas perdre de vue
+<img src="img/choix.png" alt="Première question : y a-t-il un ordre ? Si les éléments s'enchaînent c'est une séquence, sinon c'est une grille. Deuxième question : est-ce du matériel ? Un brochage devient un schéma de carte, jamais un tableau de broches. Troisième question : est-ce une hiérarchie ? Des dossiers et des fichiers deviennent une arborescence. Quatrième question : reste-t-il un tableau ? Alors la question n'a pas été posée correctement, il n'en subsiste aucun dans l'organisation." width="100%">
 
-**L'accent vient de la bannière du module.** Switch Track en `#FFAE42`, Launch Track en `#FF4D4D`, Lift Hill en `#4DD4FF`, Module Audio en `#A78BFA`, Smoke Machine en `#C9CDD2`, Banc LED en `#2FD48A`, WiFi Manager en `#22D3EE`, WebApp en `#5B8DEF`, Guess The Coaster en `#5CE08A`, bot Discord en `#5865F2`. Un dépôt garde la même couleur de haut en bas.
+Une machine à états ne passe par aucun de ces quatre scripts : elle se dessine à la main, en reprenant les styles de `seq.sh`. Voir [Launch Track](https://github.com/Microcoaster/Launch-Track) et [Lift Hill](https://github.com/Microcoaster/Lift-Hill).
 
-**Chaque figure porte un texte alternatif qui énumère son contenu.** Une image ne se cherche pas dans la page et ne se lit pas à voix haute. Le texte alternatif est ce qui rend l'information accessible et retrouvable, et c'est le prix à payer pour avoir remplacé les tableaux.
+<img src="img/s03.png" alt="03 Les couleurs" width="100%">
 
-## Détail d'implémentation
+L'accent vient de la bannière du dépôt, et un dépôt garde la même couleur de haut en bas.
 
-`grid.sh` et `seq.sh` appellent Chrome deux fois. La hauteur d'une figure dépend du repli des textes, qui n'est pas devinable à l'avance : la première passe laisse la page écrire sa hauteur réelle dans son `<title>`, que `--dump-dom` renvoie, la seconde prend la capture à cette hauteur exacte. C'est ce qui évite les marges mortes en bas et les contenus coupés.
+<img src="img/couleurs.png" alt="Couleurs d'accent par dépôt. WebApp #5B8DEF. WiFi Manager #22D3EE. Switch Track #FFAE42. Launch Track #FF4D4D. Lift Hill #4DD4FF. Module Audio #A78BFA. Smoke Machine #C9CDD2. Banc LED #2FD48A. Guess The Coaster #5CE08A. Bot Discord #5865F2." width="100%">
 
-Le rendu se fait à `--force-device-scale-factor=2`, sur une largeur de 1280 pixels, avec `--virtual-time-budget` pour laisser les polices se charger. Sans ce dernier, Chrome capture avant l'arrivée des webfonts et la figure sort dans une police de repli.
+La page d'organisation et le guide de contribution utilisent `#E4E8ED`, un gris neutre : ils parlent de l'organisation, pas d'un produit.
+
+<img src="img/s04.png" alt="04 Ce qu'il faut savoir" width="100%">
+
+**Chaque figure porte un texte alternatif qui énumère son contenu.** Une image ne se cherche pas dans la page et ne se lit pas à voix haute. C'est le prix à payer pour avoir remplacé les tableaux, et il n'est pas négociable.
+
+**Ne jamais écrire de chiffres en police Syne.** Ses numéraux sont mauvais, `ESP32` y devient illisible. Les marquages de carte sont en JetBrains Mono.
+
+**Chrome est appelé deux fois par `grid.sh`, `seq.sh` et `tree.sh`.** La hauteur d'une figure dépend du repli des textes, qui n'est pas devinable à l'avance. La première passe laisse la page écrire sa hauteur réelle dans son `<title>`, que `--dump-dom` renvoie ; la seconde prend la capture à cette hauteur exacte. C'est ce qui évite les marges mortes en bas et les contenus coupés.
+
+**`--virtual-time-budget` est obligatoire.** Sans lui, Chrome capture avant le chargement des polices et la figure sort dans une police de repli. L'erreur ne se voit qu'en comparant deux images côte à côte.
+
+Le rendu se fait à `--force-device-scale-factor=2` sur une largeur de 1280 pixels. Les cartes destinées à être affichées en colonnes, comme les liens du bas de page, sont dessinées à leur largeur d'affichage réelle et non à 1280 : sinon leur texte serait réduit au point d'être illisible.
 
 ---
 
-<sub>MicroCoaster · microcoaster.com</sub>
+<div align="center">
+
+<img src="../profile/img/cloture.png" alt="MicroCoaster, des heures infinies de fun. microcoaster.com, échelle 1:78, conçu en Autriche." width="100%">
+
+</div>
