@@ -64,14 +64,15 @@ Le [**guide de contribution**](https://github.com/Microcoaster/.github/blob/main
 
 <div align="center">
 
-[![Site](https://img.shields.io/badge/microcoaster.com-FFFFFF?style=for-the-badge&logo=firefoxbrowser&logoColor=black&labelColor=1A1A1A)](https://microcoaster.com)
-[![Application](https://img.shields.io/badge/app.microcoaster.com-E8E8E8?style=for-the-badge&logo=react&logoColor=black&labelColor=1A1A1A)](https://app.microcoaster.com)
-[![Documentation](https://img.shields.io/badge/docs-C0C0C0?style=for-the-badge&logo=readthedocs&logoColor=black&labelColor=1A1A1A)](https://docs.microcoaster.com)
-[![Forum](https://img.shields.io/badge/forum-A8A8A8?style=for-the-badge&logo=discourse&logoColor=black&labelColor=1A1A1A)](https://forum.microcoaster.com)
+<a href="https://microcoaster.com"><img src="img/liens/site.png" alt="Site : microcoaster.com" width="32%"></a>
+<a href="https://app.microcoaster.com"><img src="img/liens/app.png" alt="Application : app.microcoaster.com" width="32%"></a>
+<a href="https://docs.microcoaster.com"><img src="img/liens/docs.png" alt="Documentation : docs.microcoaster.com" width="32%"></a>
 
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=1A1A1A)](https://microcoaster.com/discord)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=1A1A1A)](https://www.youtube.com/@microcoaster)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=1A1A1A)](https://instagram.com/microcoaster)
+<a href="https://forum.microcoaster.com"><img src="img/liens/forum.png" alt="Forum : forum.microcoaster.com" width="32%"></a>
+<a href="https://microcoaster.com/discord"><img src="img/liens/discord.png" alt="Communauté : le serveur Discord" width="32%"></a>
+<a href="https://www.youtube.com/@microcoaster"><img src="img/liens/youtube.png" alt="Vidéos : la chaîne YouTube" width="32%"></a>
+
+<a href="https://instagram.com/microcoaster"><img src="img/liens/instagram.png" alt="Photos : @microcoaster sur Instagram" width="32%"></a>
 
 <br>
 
