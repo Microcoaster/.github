@@ -74,8 +74,6 @@ Le [**guide de contribution**](https://github.com/Microcoaster/.github/blob/main
 
 <a href="https://instagram.com/microcoaster"><img src="img/liens/instagram.png" alt="Photos : @microcoaster sur Instagram" width="32%"></a>
 
-<br>
-
-<sub>MicroCoaster™ · Des heures infinies de fun</sub>
-
 </div>
+
+<img src="img/cloture.png" alt="MicroCoaster, des heures infinies de fun. microcoaster.com, échelle 1:78, conçu en Autriche." width="100%">
