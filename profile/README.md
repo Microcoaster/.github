@@ -58,7 +58,7 @@ Un bug repéré ou une idée qui passe : ouvrez une issue tout de suite. C'est c
 
 **Non négociable.** Pas de push direct sur `main` ni sur `develop`. Review obligatoire avant fusion. Tests locaux avant d'ouvrir une pull request. Historique propre et linéaire.
 
-Le [**guide de contribution**](./CONTRIBUTING.md) détaille les commandes Git, les exemples de conventions et la résolution des problèmes courants.
+Le [**guide de contribution**](https://github.com/Microcoaster/.github/blob/main/CONTRIBUTING.md) détaille les commandes Git, les exemples de conventions et la résolution des problèmes courants. Posé à la racine du dépôt `.github`, il sert de guide par défaut à tous les dépôts de l'organisation.
 
 <img src="img/sections/s05.png" alt="05 Nous suivre" width="100%">
 
