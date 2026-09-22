@@ -7,17 +7,10 @@
 # 256 de côté, coin arrondi à 60, fond de marque et logo blanc. C'est ce
 # qui aligne ce bloc sur les rangées de stack du profil GitHub.
 #
-# Quatre façons de remplir une tuile :
+# Trois façons de remplir une tuile :
 #   pack   <slug>            la tuile skillicons telle quelle
 #   marque <slug> <fond>     un logo Simple Icons, en blanc sur la marque
-#   logo   <clé>             le logo MicroCoaster, pour le site lui-même
-#   maison <clé> <glyphe>    une autre destination MicroCoaster
-#
-# Les destinations maison ne sont pas quatre dessins sans rapport : elles
-# reprennent le cadre carré du logo, qui est sa signature, et n'en
-# changent que le contenu. Le site garde la boucle, l'application des
-# curseurs, la documentation un livre, le forum une bulle. Vues côte à
-# côte, elles se lisent comme une famille.
+#   logo   <clé>             le logo MicroCoaster
 #
 # Les sources vivent dans tools/icones/, sk/ pour celles du pack.
 D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/liens"
@@ -78,27 +71,6 @@ DETOUR='<svg width="0" height="0" style="position:absolute"><filter id="detour" 
 logo () {
   rendu "$1" "<div class=\"t\" style=\"background:$FOND\">$DETOUR
 <img src=\"file:///$B/icones/microcoaster.png\" style=\"width:296px;height:296px;filter:url(#detour);position:absolute;left:-4px;top:-8px\"></div>"
-}
-
-# maison <clé> <glyphe> : le même logo, avec une pastille en bas à droite.
-#
-# Dessiner quatre cadres différents revenait à inventer quatre logos : la
-# rangée perdait la marque. Ici le logo ne bouge pas, une seule chose
-# change, et elle dit laquelle des destinations c'est. Le logo recule à
-# 296 pour laisser la place, la pastille est un disque blanc cerné de la
-# couleur de la tuile, et son glyphe est évidé dans ce même ton.
-#
-# Le glyphe s'écrit dans un repère de 24 centré sur la pastille : il est
-# translaté de 178 et mis à l échelle 3, soit un champ utile de 72 px sur
-# une pastille de 108.
-maison () {
-  rendu "$1" "<div class=\"t\" style=\"background:$FOND\">$DETOUR
-<img src=\"file:///$B/icones/microcoaster.png\" style=\"width:296px;height:296px;filter:url(#detour);position:absolute;left:-4px;top:-8px\">
-<svg viewBox=\"0 0 288 288\" width=\"288\" height=\"288\" style=\"position:absolute;left:0;top:0\">
-  <circle cx=\"214\" cy=\"214\" r=\"66\" fill=\"$FOND\"/>
-  <circle cx=\"214\" cy=\"214\" r=\"54\" fill=\"#FFFFFF\"/>
-  <g transform=\"translate(178 178) scale(3)\" fill=\"none\" stroke=\"$FOND\" stroke-width=\"1.35\" stroke-linecap=\"round\" stroke-linejoin=\"round\">$2</g>
-</svg></div>"
 }
 
 # adresse <clé> <texte> : la pastille en clair qui suit la rangée, pour

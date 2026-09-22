@@ -69,14 +69,13 @@ treefig bot "#5865F2" "Microcoaster-bot/" \
 
 ```bash
 source tools/liens.sh
-pack discord                 # la tuile skillicons telle quelle
-marque youtube "#FF0000"     # un logo Simple Icons, en blanc sur la marque
-logo site                    # le logo MicroCoaster, détouré
-maison forum '<path d="…"/>' # le même logo, plus une pastille
+pack discord              # la tuile skillicons telle quelle
+marque youtube "#FF0000"  # un logo Simple Icons, en blanc sur la marque
+logo site                 # le logo MicroCoaster, détouré
 adresse adresse "microcoaster.com"
 ```
 
-Les quatre destinations de l'organisation portent toutes le logo, sans exception : c'est une pastille en bas à droite qui dit laquelle. Des curseurs pour l'application, un livre pour la documentation, une bulle pour le forum, rien pour le site lui-même. Dessiner quatre icônes différentes revenait à inventer quatre logos, et la rangée perdait la marque.
+La rangée se limite à quatre tuiles : le site, puis Discord, YouTube et Instagram. L'application, la documentation et le forum vivent déjà dans le corps de la page ; les redire en bas ne leur ajoutait qu'une icône de plus à distinguer.
 
 `tools/profil-liens.sh` produit la rangée publiée telle quelle.
 
