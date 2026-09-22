@@ -17,7 +17,7 @@ This organisation holds all the software: the control application, the ESP32 fir
 
 <img src="img/en/sections/s01.png" alt="01 The application" width="100%">
 
-<a href="https://github.com/Microcoaster/MicroCoasterWebApp"><img src="img/en/webapp.png" alt="MicroCoaster WebApp, the web control application" width="100%"></a>
+<a href="https://github.com/Microcoaster/MicroCoasterWebApp/blob/main/README.en.md"><img src="img/en/webapp.png" alt="MicroCoaster WebApp, the web control application" width="100%"></a>
 
 Live at **[app.microcoaster.com](https://app.microcoaster.com)**. It discovers the connected modules, shows their telemetry in real time, and lets you build timelines that orchestrate a whole layout: station dispatch, points, light effects, smoke and audio fired in the order you want.
 
@@ -29,31 +29,31 @@ It is also what decides. A module never starts moving on its own: it carries out
 
 They all share the same base: an ESP32 under PlatformIO, a captive portal for joining the network, then a permanent WebSocket link to the server.
 
-<a href="https://github.com/Microcoaster/MicroCoaster_WifiManager"><img src="img/en/wifimanager.png" alt="WiFi Manager, the base firmware shared by the modules" width="100%"></a>
+<a href="https://github.com/Microcoaster/MicroCoaster_WifiManager/blob/main/README.en.md"><img src="img/en/wifimanager.png" alt="WiFi Manager, the base firmware shared by the modules" width="100%"></a>
 
-<a href="https://github.com/Microcoaster/Switch-Track"><img src="img/en/switchtrack.png" alt="Switch Track, the points module" width="100%"></a>
+<a href="https://github.com/Microcoaster/Switch-Track/blob/main/README.en.md"><img src="img/en/switchtrack.png" alt="Switch Track, the points module" width="100%"></a>
 
-<a href="https://github.com/Microcoaster/Launch-Track"><img src="img/en/launch.png" alt="Launch Track, the launch section" width="100%"></a>
+<a href="https://github.com/Microcoaster/Launch-Track/blob/main/README.en.md"><img src="img/en/launch.png" alt="Launch Track, the launch section" width="100%"></a>
 
-<a href="https://github.com/Microcoaster/Lift-Hill"><img src="img/en/lift.png" alt="Lift Hill, hauling the train up" width="100%"></a>
+<a href="https://github.com/Microcoaster/Lift-Hill/blob/main/README.en.md"><img src="img/en/lift.png" alt="Lift Hill, hauling the train up" width="100%"></a>
 
-<a href="https://github.com/Microcoaster/Module-Audio"><img src="img/en/audio.png" alt="Audio module, an embedded player" width="100%"></a>
+<a href="https://github.com/Microcoaster/Module-Audio/blob/main/README.en.md"><img src="img/en/audio.png" alt="Audio module, an embedded player" width="100%"></a>
 
-<a href="https://github.com/Microcoaster/Smoke-Machine"><img src="img/en/smoke.png" alt="Smoke Machine, the smoke module" width="100%"></a>
+<a href="https://github.com/Microcoaster/Smoke-Machine/blob/main/README.en.md"><img src="img/en/smoke.png" alt="Smoke Machine, the smoke module" width="100%"></a>
 
-<a href="https://github.com/Microcoaster/ESP-32-led"><img src="img/en/led.png" alt="LED bench, the test version of the Switch Track" width="100%"></a>
+<a href="https://github.com/Microcoaster/ESP-32-led/blob/main/README.en.md"><img src="img/en/led.png" alt="LED bench, the test version of the Switch Track" width="100%"></a>
 
 Two ways of giving the train the energy it will live on: haul it to the top of a hill, or accelerate it over a few tens of centimetres. The **Lift Hill** does the first, the **Launch Track** the second.
 
 <img src="img/en/sections/s03.png" alt="03 Around the product" width="100%">
 
-<a href="https://github.com/Microcoaster/Microcoaster-bot"><img src="img/en/bot.png" alt="The Discord support and warranty bot" width="100%"></a>
+<a href="https://github.com/Microcoaster/Microcoaster-bot/blob/main/README.en.md"><img src="img/en/bot.png" alt="The Discord support and warranty bot" width="100%"></a>
 
-<a href="https://github.com/Microcoaster/GuessTheCoaster"><img src="img/en/guess.png" alt="Guess The Coaster, a community Discord game" width="100%"></a>
+<a href="https://github.com/Microcoaster/GuessTheCoaster/blob/main/README.en.md"><img src="img/en/guess.png" alt="Guess The Coaster, a community Discord game" width="100%"></a>
 
-<a href="https://github.com/Microcoaster/MicroCoaster_Docs"><img src="img/en/docs.png" alt="MicroCoaster Docs, the holding page for the product documentation" width="100%"></a>
+<a href="https://github.com/Microcoaster/MicroCoaster_Docs/blob/main/README.en.md"><img src="img/en/docs.png" alt="MicroCoaster Docs, the holding page for the product documentation" width="100%"></a>
 
-<a href="https://github.com/Microcoaster/MicroCoaster_Forum"><img src="img/en/forum.png" alt="MicroCoaster Forum, the holding page for the community forum" width="100%"></a>
+<a href="https://github.com/Microcoaster/MicroCoaster_Forum/blob/main/README.en.md"><img src="img/en/forum.png" alt="MicroCoaster Forum, the holding page for the community forum" width="100%"></a>
 
 The documentation and the forum do not exist yet. These two repositories hold their domains in the meantime, with a countdown and a language switch. An Express server serving static files, with no build step: a holding page that needs a toolchain is a holding page nobody dares touch again.
 
