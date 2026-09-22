@@ -99,6 +99,8 @@ La page d'organisation et le guide de contribution utilisent `#E4E8ED`, un gris 
 
 **Ne jamais écrire de chiffres en police Syne.** Ses numéraux sont mauvais, `ESP32` y devient illisible. Les marquages de carte sont en JetBrains Mono.
 
+**Le nom et le badge d'une fiche sont échappés, sa description non.** `grid.sh` rend du HTML : sans cela, `/ban <user>` passait pour une balise inconnue et disparaissait de l'image, laissant `/ban` tout seul. Les chevrons du nom s'écrivent donc tels quels. La description, elle, reste du HTML, c'est là que vit `<code>`.
+
 **Chrome est appelé deux fois par `grid.sh`, `seq.sh` et `tree.sh`.** La hauteur d'une figure dépend du repli des textes, qui n'est pas devinable à l'avance. La première passe laisse la page écrire sa hauteur réelle dans son `<title>`, que `--dump-dom` renvoie ; la seconde prend la capture à cette hauteur exacte. C'est ce qui évite les marges mortes en bas et les contenus coupés.
 
 **`--virtual-time-budget` est obligatoire.** Sans lui, Chrome capture avant le chargement des polices et la figure sort dans une police de repli. L'erreur ne se voit qu'en comparant deux images côte à côte.

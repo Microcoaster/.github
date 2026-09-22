@@ -8,9 +8,21 @@
 #
 # usage : grid <clé> <accent> <colonnes> <entrées...>
 #         entrée : "NOM|description"  ou  "NOM|badge|description"
+#
+# Le nom et le badge sont échappés : « /ban <user> » s'écrit tel quel, ses
+# chevrons ne sont pas pris pour une balise. La description, elle, reste du
+# HTML, c'est là que vit <code>.
 D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/grid"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
+
+# Les chevrons deviennent des entités. Le & n'est pas touché, pour qu'un
+# appelant qui écrit déjà &lt; ne se retrouve pas avec &amp;lt;.
+#
+# Le passage par sed n'est pas un détour : depuis bash 5.2, un & nu dans le
+# remplacement de ${var//motif/remplacement} désigne le texte trouvé, et
+# &lt; y devient <lt;.
+esc () { printf '%s' "$1" | sed -e 's/</\&lt;/g' -e 's/>/\&gt;/g'; }
 
 grid () {
 local key="$1" ac="$2" cols="$3"; shift 3
@@ -19,6 +31,7 @@ local e nm bd tx
 for e in "$@"; do
   IFS='|' read -r a b c <<< "$e"
   if [ -n "$c" ]; then nm="$a"; bd="$b"; tx="$c"; else nm="$a"; bd=""; tx="$b"; fi
+  nm="$(esc "$nm")"; bd="$(esc "$bd")"
   cards+="<div class=\"c\"><div class=\"hd\"><span class=\"nm\">${nm}</span>"
   [ -n "$bd" ] && cards+="<span class=\"bd\">${bd}</span>"
   cards+="</div><p>${tx}</p></div>"
