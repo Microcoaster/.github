@@ -12,7 +12,7 @@ Cette organisation héberge tout le logiciel : l'application de pilotage, les fi
 
 <img src="img/sections/s01.png" alt="01 L'application" width="100%">
 
-<img src="img/webapp.png" alt="MicroCoaster WebApp, application web de pilotage" width="100%">
+<a href="https://github.com/Microcoaster/MicroCoasterWebApp"><img src="img/webapp.png" alt="MicroCoaster WebApp, application web de pilotage" width="100%"></a>
 
 Disponible sur **[app.microcoaster.com](https://app.microcoaster.com)**. Elle découvre les modules connectés, affiche leur télémétrie en temps réel, et permet de composer des timelines pour orchestrer un circuit entier : départ de station, aiguillage, effets lumineux, fumée et audio déclenchés dans l'ordre voulu.
 
@@ -24,27 +24,27 @@ C'est aussi elle qui décide. Un module ne se met jamais en mouvement de lui-mê
 
 Tous partagent la même base : un ESP32 sous PlatformIO, un portail captif pour l'appairage au réseau, puis une liaison WebSocket permanente avec le serveur.
 
-<img src="img/wifimanager.png" alt="WiFi Manager, firmware de base commun aux modules" width="100%">
+<a href="https://github.com/Microcoaster/MicroCoaster_WifiManager"><img src="img/wifimanager.png" alt="WiFi Manager, firmware de base commun aux modules" width="100%"></a>
 
-<img src="img/switchtrack.png" alt="Switch Track, module d'aiguillage" width="100%">
+<a href="https://github.com/Microcoaster/Switch-Track"><img src="img/switchtrack.png" alt="Switch Track, module d'aiguillage" width="100%"></a>
 
-<img src="img/launch.png" alt="Launch Track, zone de lancement" width="100%">
+<a href="https://github.com/Microcoaster/Launch-Track"><img src="img/launch.png" alt="Launch Track, zone de lancement" width="100%"></a>
 
-<img src="img/lift.png" alt="Lift Hill, montée du train" width="100%">
+<a href="https://github.com/Microcoaster/Lift-Hill"><img src="img/lift.png" alt="Lift Hill, montée du train" width="100%"></a>
 
-<img src="img/audio.png" alt="Module Audio, lecteur embarqué" width="100%">
+<a href="https://github.com/Microcoaster/Module-Audio"><img src="img/audio.png" alt="Module Audio, lecteur embarqué" width="100%"></a>
 
-<img src="img/smoke.png" alt="Smoke Machine, module de fumée" width="100%">
+<a href="https://github.com/Microcoaster/Smoke-Machine"><img src="img/smoke.png" alt="Smoke Machine, module de fumée" width="100%"></a>
 
-<img src="img/led.png" alt="Banc LED, version d'essai du Switch Track" width="100%">
+<a href="https://github.com/Microcoaster/ESP-32-led"><img src="img/led.png" alt="Banc LED, version d'essai du Switch Track" width="100%"></a>
 
 Deux manières de donner au train l'énergie dont il vivra le circuit : le hisser en haut d'une montée, ou l'accélérer sur quelques dizaines de centimètres. Le **Lift Hill** fait la première, le **Launch Track** la seconde.
 
 <img src="img/sections/s03.png" alt="03 Autour du produit" width="100%">
 
-<img src="img/bot.png" alt="Bot Discord de support et de garanties" width="100%">
+<a href="https://github.com/Microcoaster/Microcoaster-bot"><img src="img/bot.png" alt="Bot Discord de support et de garanties" width="100%"></a>
 
-<img src="img/guess.png" alt="Guess The Coaster, jeu Discord communautaire" width="100%">
+<a href="https://github.com/Microcoaster/GuessTheCoaster"><img src="img/guess.png" alt="Guess The Coaster, jeu Discord communautaire" width="100%"></a>
 
 <img src="img/sections/s04.png" alt="04 Travailler ici" width="100%">
 
