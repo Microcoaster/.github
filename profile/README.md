@@ -65,7 +65,7 @@ Le [**guide de contribution**](https://github.com/Microcoaster/.github/blob/main
 <p align="center">
   <a href="https://microcoaster.com"><img src="img/liens/site.png" alt="Le site : microcoaster.com" width="72" /></a>
   &nbsp;&nbsp;
-  <a href="https://microcoaster.com/discord"><img src="img/liens/discord.png" alt="La communauté sur Discord" width="72" /></a>
+  <a href="https://discord.gg/NXqd4eYYQf"><img src="img/liens/discord.png" alt="La communauté sur Discord" width="72" /></a>
   &nbsp;&nbsp;
   <a href="https://www.youtube.com/@microcoaster"><img src="img/liens/youtube.png" alt="La chaîne YouTube @microcoaster" width="72" /></a>
   &nbsp;&nbsp;
