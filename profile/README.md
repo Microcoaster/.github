@@ -46,6 +46,12 @@ Deux manières de donner au train l'énergie dont il vivra le circuit : le hisse
 
 <a href="https://github.com/Microcoaster/GuessTheCoaster"><img src="img/guess.png" alt="Guess The Coaster, jeu Discord communautaire" width="100%"></a>
 
+<a href="https://github.com/Microcoaster/MicroCoaster_Docs"><img src="img/docs.png" alt="MicroCoaster Docs, page d'attente de la documentation produit" width="100%"></a>
+
+<a href="https://github.com/Microcoaster/MicroCoaster_Forum"><img src="img/forum.png" alt="MicroCoaster Forum, page d'attente du forum communautaire" width="100%"></a>
+
+La documentation et le forum n'existent pas encore. Ces deux dépôts tiennent leurs domaines en attendant, avec un compte à rebours et une bascule de langue. Un serveur Express qui sert du statique, sans étape de build : une page d'attente qui demande une chaîne de compilation est une page d'attente qu'on n'ose plus toucher.
+
 <img src="img/sections/s04.png" alt="04 Travailler ici" width="100%">
 
 <img src="img/schemas/cycle.png" alt="Une issue, puis une branche, des commits, une review, la fusion" width="100%">
