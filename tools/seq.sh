@@ -5,7 +5,7 @@
 # et la longueur des textes changeant d'un module à l'autre.
 #
 # usage : seq <clé> <accent> "Titre|Texte" ...
-D="$(cd "$(dirname "$0")" && pwd)"; mkdir -p "$D/html" "$D/flow"
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/flow"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
 

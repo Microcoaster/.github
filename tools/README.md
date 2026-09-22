@@ -65,6 +65,21 @@ treefig bot "#5865F2" "Microcoaster-bot/" \
   "2|warrantyDAO.js|Codes, activations et échéances."
 ```
 
+**Les tuiles de liens**, à part : elles ne remplacent pas un tableau mais les cartes du bas de page. Un carré de 288 pixels au gabarit de skillicons.dev, affiché à 72, pour que le bloc « Nous suivre » parle la même langue que les rangées de stack.
+
+```bash
+source tools/liens.sh
+pack discord                 # la tuile skillicons telle quelle
+marque youtube "#FF0000"     # un logo Simple Icons, en blanc sur la marque
+logo site                    # le logo MicroCoaster, détouré
+maison forum '<path d="…"/>' # le même logo, plus une pastille
+adresse adresse "microcoaster.com"
+```
+
+Les quatre destinations de l'organisation portent toutes le logo, sans exception : c'est une pastille en bas à droite qui dit laquelle. Des curseurs pour l'application, un livre pour la documentation, une bulle pour le forum, rien pour le site lui-même. Dessiner quatre icônes différentes revenait à inventer quatre logos, et la rangée perdait la marque.
+
+`tools/profil-liens.sh` produit la rangée publiée telle quelle.
+
 <img src="img/s02.png" alt="02 Comment choisir" width="100%">
 
 <img src="img/choix.png" alt="Première question : y a-t-il un ordre ? Si les éléments s'enchaînent c'est une séquence, sinon c'est une grille. Deuxième question : est-ce du matériel ? Un brochage devient un schéma de carte, jamais un tableau de broches. Troisième question : est-ce une hiérarchie ? Des dossiers et des fichiers deviennent une arborescence. Quatrième question : reste-t-il un tableau ? Alors la question n'a pas été posée correctement, il n'en subsiste aucun dans l'organisation." width="100%">
@@ -89,7 +104,9 @@ La page d'organisation et le guide de contribution utilisent `#E4E8ED`, un gris 
 
 **`--virtual-time-budget` est obligatoire.** Sans lui, Chrome capture avant le chargement des polices et la figure sort dans une police de repli. L'erreur ne se voit qu'en comparant deux images côte à côte.
 
-Le rendu se fait à `--force-device-scale-factor=2` sur une largeur de 1280 pixels. Les cartes destinées à être affichées en colonnes, comme les liens du bas de page, sont dessinées à leur largeur d'affichage réelle et non à 1280 : sinon leur texte serait réduit au point d'être illisible.
+Le rendu se fait à `--force-device-scale-factor=2` sur une largeur de 1280 pixels. Les tuiles de `liens.sh` font exception : elles sont dessinées à 288 pixels pleins, sans facteur d'échelle, puis affichées à 72. Un logo n'a pas de texte à préserver, seulement des courbes, et quatre fois la taille d'affichage suffit à les garder nettes sur un écran dense.
+
+**Le chemin des scripts vient de `BASH_SOURCE`, pas de `$0`.** Ils sont faits pour être chargés par `source` : `$0` désigne alors le shell appelant, et les figures atterrissent dans le dossier courant au lieu de `tools/`. C'est ainsi que des dossiers `html/` et `sec/` se sont retrouvés commités dans un dépôt de module.
 
 ---
 

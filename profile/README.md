@@ -62,18 +62,24 @@ Le [**guide de contribution**](https://github.com/Microcoaster/.github/blob/main
 
 <img src="img/sections/s05.png" alt="05 Nous suivre" width="100%">
 
-<div align="center">
+<p align="center">
+  <a href="https://microcoaster.com"><img src="img/liens/site.png" alt="Le site : microcoaster.com" width="72" /></a>
+  &nbsp;&nbsp;
+  <a href="https://app.microcoaster.com"><img src="img/liens/app.png" alt="L'application de pilotage : app.microcoaster.com" width="72" /></a>
+  &nbsp;&nbsp;
+  <a href="https://docs.microcoaster.com"><img src="img/liens/docs.png" alt="La documentation : docs.microcoaster.com" width="72" /></a>
+  &nbsp;&nbsp;
+  <a href="https://forum.microcoaster.com"><img src="img/liens/forum.png" alt="Le forum : forum.microcoaster.com" width="72" /></a>
+  &nbsp;&nbsp;
+  <a href="https://microcoaster.com/discord"><img src="img/liens/discord.png" alt="La communauté sur Discord" width="72" /></a>
+  &nbsp;&nbsp;
+  <a href="https://www.youtube.com/@microcoaster"><img src="img/liens/youtube.png" alt="La chaîne YouTube @microcoaster" width="72" /></a>
+  &nbsp;&nbsp;
+  <a href="https://instagram.com/microcoaster"><img src="img/liens/instagram.png" alt="Les photos sur Instagram @microcoaster" width="72" /></a>
+</p>
 
-<a href="https://microcoaster.com"><img src="img/liens/site.png" alt="Site : microcoaster.com" width="32%"></a>
-<a href="https://app.microcoaster.com"><img src="img/liens/app.png" alt="Application : app.microcoaster.com" width="32%"></a>
-<a href="https://docs.microcoaster.com"><img src="img/liens/docs.png" alt="Documentation : docs.microcoaster.com" width="32%"></a>
-
-<a href="https://forum.microcoaster.com"><img src="img/liens/forum.png" alt="Forum : forum.microcoaster.com" width="32%"></a>
-<a href="https://microcoaster.com/discord"><img src="img/liens/discord.png" alt="Communauté : le serveur Discord" width="32%"></a>
-<a href="https://www.youtube.com/@microcoaster"><img src="img/liens/youtube.png" alt="Vidéos : la chaîne YouTube" width="32%"></a>
-
-<a href="https://instagram.com/microcoaster"><img src="img/liens/instagram.png" alt="Photos : @microcoaster sur Instagram" width="32%"></a>
-
-</div>
+<p align="center">
+  <a href="https://microcoaster.com"><img src="img/liens/adresse.png" alt="microcoaster.com" width="380" /></a>
+</p>
 
 <img src="img/cloture.png" alt="MicroCoaster, des heures infinies de fun. microcoaster.com, échelle 1:78, conçu en Autriche." width="100%">

@@ -8,7 +8,7 @@
 #
 # usage : grid <clé> <accent> <colonnes> <entrées...>
 #         entrée : "NOM|description"  ou  "NOM|badge|description"
-D="$(cd "$(dirname "$0")" && pwd)"; mkdir -p "$D/html" "$D/grid"
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/grid"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
 

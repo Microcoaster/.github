@@ -3,7 +3,7 @@
 # Même grammaire que ceux du profil : cartouche d'index de largeur fixe,
 # titre, puis une règle dont le premier segment reprend l'accent du dépôt.
 # L'accent change d'un module à l'autre, le reste ne bouge pas.
-D="$(cd "$(dirname "$0")" && pwd)"; mkdir -p "$D/html" "$D/sec"
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/sec"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
 

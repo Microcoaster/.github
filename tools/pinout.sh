@@ -6,7 +6,7 @@
 #
 # usage : pinout <clé> <accent> <titre carte> <gauche...> -- <droite...>
 #         chaque entrée : "GPIO|Nom|Rôle"
-D="$(cd "$(dirname "$0")" && pwd)"; mkdir -p "$D/html" "$D/pin"
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/pin"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
 
