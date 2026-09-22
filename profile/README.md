@@ -1,5 +1,10 @@
 <div align="center">
 
+<p>
+  <img src="img/langues/fr-on.png" alt="Français, page affichée" width="150" />
+  <a href="README.en.md"><img src="img/langues/en-off.png" alt="Read this page in English" width="150" /></a>
+</p>
+
 <img src="img/banniere.png" alt="MicroCoaster, kits de montagnes russes miniatures modulaires et connectés" width="100%">
 
 </div>
