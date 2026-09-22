@@ -116,3 +116,44 @@ Le rendu se fait à `--force-device-scale-factor=2` sur une largeur de 1280 pixe
 <img src="../profile/img/cloture.png" alt="MicroCoaster, des heures infinies de fun. microcoaster.com, échelle 1:78, conçu en Autriche." width="100%">
 
 </div>
+
+<img src="img/s02.png" alt="02 Les deux langues" width="100%">
+
+Chaque dépôt de l'organisation a deux READMEs : `README.md` en français,
+`README.en.md` en anglais. Les deux ouvrent sur deux pastilles qui mènent à
+l'autre. GitHub retirant JavaScript et CSS des README, rien ne peut
+basculer la page sur place : ce sont deux fichiers et un lien.
+
+`langue.sh` porte la bascule, et n'est posé qu'une fois pour toute
+l'organisation. Dans les scripts, `t <français> <anglais>` choisit la
+chaîne : les deux versions d'un texte vivent sur la même ligne, ce qui rend
+impossible d'en corriger une en oubliant l'autre.
+
+```bash
+bash tools/tout.sh
+```
+
+Refait les figures des dix dépôts, dans les deux langues, et les repose
+chez chacun. Les dépôts sont cherchés à côté de celui-ci, un dossier par
+dépôt cloné ; ceux qui manquent sont ignorés et signalés.
+
+Pour un seul module :
+
+```bash
+bash tools/modules/switchtrack.sh
+LANGUE=en bash tools/modules/switchtrack.sh
+bash tools/installer.sh
+LANGUE=en bash tools/installer.sh
+```
+
+`tools/modules/` porte un script par dépôt, et c'est le seul fichier à
+ouvrir pour changer un texte. Quatre figures ne suivent aucun gabarit
+commun et ont le leur : `etats.sh` pour les trois machines à états,
+`cablage-smoke.sh` pour le MOSFET de la machine à fumée,
+`architecture-webapp.sh` pour l'architecture de la WebApp, et `cartes.sh`
+pour les bannières de dépôt.
+
+Les bannières ne sont pas toutes rendues à la même échelle : `ECHELLE=3`
+pour Switch Track, Launch, Lift et Template, 2 par défaut pour les autres.
+C'est ainsi qu'elles ont été publiées, et le rendu les reproduit telles
+quelles.

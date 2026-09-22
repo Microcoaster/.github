@@ -3,14 +3,16 @@
 # Même grammaire que ceux du profil : cartouche d'index de largeur fixe,
 # titre, puis une règle dont le premier segment reprend l'accent du dépôt.
 # L'accent change d'un module à l'autre, le reste ne bouge pas.
-D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/sec"
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$D/langue.sh"
+mkdir -p "$D/html$SUF" "$D/sec$SUF"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
 
 # sec <clé> <accent> <index> <titre>
 sec () {
 local key="$1" ac="$2" ix="$3" ti="$4"
-cat > "$D/html/r-$key-$ix.html" <<HTML
+cat > "$D/html$SUF/r-$key-$ix.html" <<HTML
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -36,7 +38,7 @@ h2{font-family:Syne,sans-serif;font-weight:800;font-size:29px;line-height:40px;l
 HTML
 "$CH" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=10000 \
   --force-device-scale-factor=2 \
-  --screenshot="$B/sec/r-$key-$ix.png" --window-size=1280,118 "file:///$B/html/r-$key-$ix.html" >/dev/null 2>&1
+  --screenshot="$B/sec$SUF/r-$key-$ix.png" --window-size=1280,118 "file:///$B/html$SUF/r-$key-$ix.html" >/dev/null 2>&1
 }
 
 # rep <clé> <accent> <titre 01> <titre 02> ...

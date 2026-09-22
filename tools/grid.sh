@@ -12,7 +12,9 @@
 # Le nom et le badge sont échappés : « /ban <user> » s'écrit tel quel, ses
 # chevrons ne sont pas pris pour une balise. La description, elle, reste du
 # HTML, c'est là que vit <code>.
-D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/grid"
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$D/langue.sh"
+mkdir -p "$D/html$SUF" "$D/grid$SUF"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
 
@@ -37,7 +39,7 @@ for e in "$@"; do
   cards+="</div><p>${tx}</p></div>"
 done
 
-cat > "$D/html/g-$key.html" <<HTML
+cat > "$D/html$SUF/g-$key.html" <<HTML
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -62,10 +64,10 @@ HTML
 
 local H
 H="$("$CH" --headless=new --disable-gpu --virtual-time-budget=9000 --dump-dom \
-      "file:///$B/html/g-$key.html" 2>/dev/null | grep -o '<title>H[0-9]*' | grep -o '[0-9]*' | head -1)"
+      "file:///$B/html$SUF/g-$key.html" 2>/dev/null | grep -o '<title>H[0-9]*' | grep -o '[0-9]*' | head -1)"
 [ -z "$H" ] && { echo "  ECHEC mesure : $key" >&2; return 1; }
 "$CH" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=9000 \
   --force-device-scale-factor=2 \
-  --screenshot="$B/grid/$key.png" --window-size=1280,$H "file:///$B/html/g-$key.html" >/dev/null 2>&1
+  --screenshot="$B/grid$SUF/$key.png" --window-size=1280,$H "file:///$B/html$SUF/g-$key.html" >/dev/null 2>&1
 echo "  $key.png  ${H}px"
 }

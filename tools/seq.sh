@@ -5,7 +5,9 @@
 # et la longueur des textes changeant d'un module à l'autre.
 #
 # usage : seq <clé> <accent> "Titre|Texte" ...
-D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/flow"
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$D/langue.sh"
+mkdir -p "$D/html$SUF" "$D/flow$SUF"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
 
@@ -21,7 +23,7 @@ for e in "$@"; do
   i=$((i+1))
 done
 
-cat > "$D/html/s-$key.html" <<HTML
+cat > "$D/html$SUF/s-$key.html" <<HTML
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Space+Grotesk:wght@400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -44,10 +46,10 @@ HTML
 
 local H
 H="$("$CH" --headless=new --disable-gpu --virtual-time-budget=9000 --dump-dom \
-      "file:///$B/html/s-$key.html" 2>/dev/null | grep -o '<title>H[0-9]*' | grep -o '[0-9]*' | head -1)"
+      "file:///$B/html$SUF/s-$key.html" 2>/dev/null | grep -o '<title>H[0-9]*' | grep -o '[0-9]*' | head -1)"
 [ -z "$H" ] && { echo "  ECHEC mesure : $key" >&2; return 1; }
 "$CH" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=9000 \
   --force-device-scale-factor=2 \
-  --screenshot="$B/flow/$key.png" --window-size=1280,$H "file:///$B/html/s-$key.html" >/dev/null 2>&1
+  --screenshot="$B/flow$SUF/$key.png" --window-size=1280,$H "file:///$B/html$SUF/s-$key.html" >/dev/null 2>&1
 echo "  $key.png  ${H}px"
 }

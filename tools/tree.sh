@@ -7,7 +7,9 @@
 #
 # usage : tree <clé> <accent> <racine> "profondeur|nom|description" ...
 #         profondeur 1 = enfant direct de la racine
-D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/tree"
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$D/langue.sh"
+mkdir -p "$D/html$SUF" "$D/tree$SUF"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
 
@@ -53,7 +55,7 @@ for ((i=0;i<n;i++)); do
   body+="<div class=\"r\"><div class=\"lf\">${gut}${elb}<span class=\"ic ${cls}\">${ico}</span><span class=\"nm ${cls}\">${nm}</span></div><div class=\"ds\">${ds}</div></div>"
 done
 
-cat > "$D/html/t-$key.html" <<HTML
+cat > "$D/html$SUF/t-$key.html" <<HTML
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -89,10 +91,10 @@ HTML
 
 local H
 H="$("$CH" --headless=new --disable-gpu --virtual-time-budget=9000 --dump-dom \
-      "file:///$B/html/t-$key.html" 2>/dev/null | grep -o '<title>H[0-9]*' | grep -o '[0-9]*' | head -1)"
+      "file:///$B/html$SUF/t-$key.html" 2>/dev/null | grep -o '<title>H[0-9]*' | grep -o '[0-9]*' | head -1)"
 [ -z "$H" ] && { echo "  ECHEC mesure : $key" >&2; return 1; }
 "$CH" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=9000 \
   --force-device-scale-factor=2 \
-  --screenshot="$B/tree/$key.png" --window-size=1280,$H "file:///$B/html/t-$key.html" >/dev/null 2>&1
+  --screenshot="$B/tree$SUF/$key.png" --window-size=1280,$H "file:///$B/html$SUF/t-$key.html" >/dev/null 2>&1
 echo "  $key.png  ${H}px"
 }

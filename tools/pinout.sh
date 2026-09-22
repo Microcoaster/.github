@@ -6,7 +6,9 @@
 #
 # usage : pinout <clé> <accent> <titre carte> <gauche...> -- <droite...>
 #         chaque entrée : "GPIO|Nom|Rôle"
-D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; mkdir -p "$D/html" "$D/pin"
+D="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$D/langue.sh"
+mkdir -p "$D/html$SUF" "$D/pin$SUF"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
 
@@ -42,7 +44,7 @@ for ((i=0;i<nr;i++)); do
   traces+="<path d=\"M790 ${y}h104\"/><circle cx=\"894\" cy=\"${y}\" r=\"3.5\"/>"
 done
 
-cat > "$D/html/p-$key.html" <<HTML
+cat > "$D/html$SUF/p-$key.html" <<HTML
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Space+Grotesk:wght@400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -92,7 +94,7 @@ ${boxes}
 HTML
 "$CH" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=11000 \
   --force-device-scale-factor=2 \
-  --screenshot="$B/pin/$key.png" --window-size=1280,$H "file:///$B/html/p-$key.html" >/dev/null 2>&1
+  --screenshot="$B/pin$SUF/$key.png" --window-size=1280,$H "file:///$B/html$SUF/p-$key.html" >/dev/null 2>&1
 echo "  $key.png  ${H}px"
 }
 

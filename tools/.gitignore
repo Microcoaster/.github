@@ -1,9 +1,18 @@
 # Sorties des générateurs. Les images finales sont versionnées dans le
 # dépôt du module qu'elles documentent, pas ici.
-html/
-sec/
-grid/
+flow-en/
 flow/
-pin/
-tree/
+grid-en/
+grid/
+html-en/
+html/
+langues/
 liens/
+pin-en/
+pin/
+png-en/
+png/
+sec-en/
+sec/
+tree-en/
+tree/
