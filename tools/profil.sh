@@ -47,7 +47,7 @@ p{font-family:'Space Grotesk',sans-serif;font-size:20px;line-height:1.45;color:#
 .ln{position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#FFF 0%,#6E6E6E 44%,transparent 92%)}
 </style></head><body>
 <div class="w"><div class="grid"></div><div class="in">
-<img class="lg" src="file:///C:/Users/trist/Documents/Github/Microcoaster/images/logo.png">
+<img class="lg" src="file:///C:/Users/trist/Documents/Github/Microcoaster-bot-org/images/logo.png">
 <div class="tx"><h1>MicroCoaster<sup>™</sup></h1>
 <p>$P1<br>$P2</p>
 <div class="pl"><span>ESP32</span><span>NODE.JS</span><span>WEBSOCKET</span><span>$PL</span></div></div>

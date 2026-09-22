@@ -7,7 +7,7 @@ source "$D/langue.sh"
 mkdir -p "$D/html$SUF" "$D/profil$SUF"
 CH="${CHROME:-/c/Program Files/Google/Chrome/Application/chrome.exe}"
 B="$(cd "$D" && pwd -W 2>/dev/null || pwd)"
-LOGO="file:///C:/Users/trist/Documents/Github/Microcoaster/images/logo.png"
+LOGO="file:///C:/Users/trist/Documents/Github/Microcoaster-bot-org/images/logo.png"
 
 cat > "$D/html$SUF/p-orgfooter.html" <<HTML
 <!doctype html><html lang="$LG"><head><meta charset="utf-8">
