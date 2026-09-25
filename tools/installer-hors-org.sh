@@ -39,7 +39,7 @@ pose MicroCoaster_Forum "grid$SUF/forum-contenu.png" schemas/contenu.png
 
 if [ "$LG" != en ]; then
   for r in Microcoaster-bot-org MicroCoaster_Docs MicroCoaster_Forum; do
-    for k in fr-on fr-off en-on en-off; do pose "$r" "langues/$k.png" "langues/$k.png"; done
+    for k in fr-on fr-off en-on en-off; do pose "$r" "langues/$r/$k.png" "langues/$k.png"; done
   done
 fi
 

@@ -90,11 +90,11 @@ pose Template "png$SUF/o-template.png" banniere.png
 sections Template template 6
 
 # Les pastilles de langue ne dépendent pas de la langue : les deux pages
-# d'un dépôt pointent sur les mêmes fichiers.
+# d'un dépôt pointent sur les mêmes fichiers, teintés à son accent.
 if [ "$LG" != en ]; then
   for r in Switch-Track ESP-32-led Module-Audio GuessTheCoaster Launch-Track \
            Lift-Hill Smoke-Machine MicroCoaster_WifiManager MicroCoasterWebApp Template; do
-    for k in fr-on fr-off en-on en-off; do pose "$r" "langues/$k.png" "langues/$k.png"; done
+    for k in fr-on fr-off en-on en-off; do pose "$r" "langues/$r/$k.png" "langues/$k.png"; done
   done
 fi
 
