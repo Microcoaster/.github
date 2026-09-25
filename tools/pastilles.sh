@@ -10,8 +10,8 @@
 # Les quatre images servent les deux pages : le français monte fr-on et
 # en-off, l'anglais monte en-on et fr-off. Elles ne dépendent donc pas de
 # LANGUE. Chaque dépôt a son jeu dans langues/<dépôt>/, que les installeurs
-# reposent dans docs/langues/. langues/ seul garde le rouge du logo, pour
-# la page d'organisation.
+# reposent dans docs/langues/. langues/ seul prend le gris neutre de la
+# page d'organisation, qui parle de l'organisation et pas d'un produit.
 #
 # Leur fond est opaque : GitHub rend les README sur blanc comme sur noir,
 # et un sélecteur qui disparaît sur l'un des deux ne sert à rien.
@@ -65,7 +65,7 @@ jeu () {
 }
 
 # L'accent de chaque dépôt, le même que sa bannière et ses bandeaux.
-jeu ""                        "#E23B4E"
+jeu ""                        "#E4E8ED"
 jeu Switch-Track              "#FFAE42"
 jeu ESP-32-led                "#2FD48A"
 jeu Module-Audio              "#A78BFA"
